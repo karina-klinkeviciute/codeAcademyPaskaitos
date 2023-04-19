@@ -1,0 +1,1 @@
+Paskaitose demonstruotas kodas
