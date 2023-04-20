@@ -78,6 +78,7 @@ mokyklos_baigimas = Sukaktis('1988-06-01', "Mokyklos baigimas")
 
 svarbios_datos = [data1, data2, mokyklos_baigimas]
 
+mokyklos_baigimas.atimti_dienas(15)
 
 #
 # for data in svarbios_datos:
