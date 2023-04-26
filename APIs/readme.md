@@ -21,7 +21,10 @@ Pasidaryti programėlę, kuri paimtų informaciją iš kokios norsviešos API, i
 
 ## API variantai: 
 
-### API sąrašas: https://rapidapi.com/collection/list-of-free-apis
+### API sąrašai: 
+- https://rapidapi.com/collection/list-of-free-apis
+- https://github.com/public-apis/public-apis
+
 
 ### Kitos: 
 

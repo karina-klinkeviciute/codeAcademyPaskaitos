@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 # puslapis = "https://lrv.lt/"
@@ -15,12 +17,17 @@ import requests
 #
 # print(puslapio_duomenys.headers)
 
-# payload = {'q': 'pep', 'page': '2'}
-# r = requests.get('https://www.python.org/search/', params=payload)
-# print(r.url)
-
-data = {'name': 'Jonas', 'lastname': 'Jonaitis'}
-r = requests.post('http://httpbin.org/post', data=data)
+payload = {'number': 5}
+r = requests.get('https://dog-api.kinduff.com/api/facts', params=payload)
 print(r.text)
+
+faktai = json.loads(r.text)
+
+for faktas in faktai["facts"]:
+    print(f"you probably didn't know this about dogs: {faktas}")
+
+# data = {'name': 'Jonas', 'lastname': 'Jonaitis'}
+# r = requests.post('http://httpbin.org/post', data=data)
+# print(r.text)
 
 
