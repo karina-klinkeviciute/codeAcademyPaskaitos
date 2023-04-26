@@ -26,8 +26,8 @@ faktai = json.loads(r.text)
 for faktas in faktai["facts"]:
     print(f"you probably didn't know this about dogs: {faktas}")
 
-# data = {'name': 'Jonas', 'lastname': 'Jonaitis'}
-# r = requests.post('http://httpbin.org/post', data=data)
-# print(r.text)
+data = {'name': 'Jonas', 'lastname': 'Jonaitis'}
+r = requests.post('http://httpbin.org/post', data=data)
+print(r.text)
 
 
