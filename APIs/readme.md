@@ -38,4 +38,6 @@ Pasidaryti programėlę, kuri paimtų informaciją iš kokios norsviešos API, i
 
 - emoji: https://github.com/cheatsnake/emojihub 
 
+- https://github.com/robotautas/kursas/wiki/Konsultacija-Oras-pagal-IP
+
 
