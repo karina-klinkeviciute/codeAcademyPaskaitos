@@ -16,7 +16,9 @@ import json
 
 
 
-emoji_json = requests.get("https://emojihub.yurace.pro/api/random")
+emoji_json = requests.get("https://emojihub.yurace.pro/api/random/")
+
+
 
 print(emoji_json.text)
 
@@ -28,12 +30,11 @@ print(f"pavadinimas: {emoji_duomenys['name']}")
 
 print(f"\{emoji_duomenys['unicode'][0]}")
 
+
+# padarom, kad mums rodytų patį emoji
 emoji_kodas = emoji_duomenys['unicode'][0][2:]
-
 emoji_kodas = int(emoji_kodas, 16)
-
 emoji = chr(emoji_kodas)
 # emoji_kodas = "\\" + emoji_kodas.replace("+", "000")
 
 print(emoji)
-
