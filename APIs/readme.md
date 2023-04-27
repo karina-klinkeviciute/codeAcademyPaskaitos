@@ -63,7 +63,16 @@ Su šia biblioteka gauti ir siunčiami duomenys yra koduojami `JSON` formatu, ta
 `json` biblioteka, kurios pagalba mes gautus ar siunčiamus duomenis galim pakeisti iš Python struktūrų 
 į JSON formatą siuntimui, ir atvirkščiai. 
 
-Informaciją apie `requests` ir `json` bibliotekas rasite žemiau pateiktose nuorodose.
+Kai kurios API reikalauja registracijos. T.y., tam, kad galėtume jomis naudoti, reikia užsiregitruoti jų kūrėjų 
+tinklalapyje. Dalis jų būna ir mokamos. Jei prie API reikia prisiregistruoti, 
+tai jungimuisi prie jos naudojamas API KEY. Tokiu atveju šio API key negalima perkelti į `git` repozitoriją, nes
+tada juo gali pasinaudoti kiti žmonės. Tai gali ir kainuoti, ir tapti papildoma saugumo problema. 
+Beje, jei jį netyčia įkeliam į git, tada ištrinam ir atnaujinam git repozitoriją, tai nepadeda, nes `git` istoriją
+taip pat galima pamatyti. Tada reikia arba trinti visą repozitoriją ir kurti iš naujo, su nauja `git` istorija, 
+arba, jei tai įmanoma, gauti naujus API Keys. 
+
+Tam, kad nekelti API į `git`, galima naudoti aplinkos kintamuosius. Nuorodas į informaciją apie juos rasit žemiau. 
+
 
 ## Nuorodos
 
