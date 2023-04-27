@@ -1,4 +1,4 @@
-# Projektukas su API
+# API
 
 ## Kas tai yra Web API
 
