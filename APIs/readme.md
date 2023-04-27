@@ -1,7 +1,71 @@
 # Projektukas su API
 
+## Kas tai yra Web API
 
-## Temos
+Web API yra būdas, kuriuo tarp savęs bendrauja skirtingos sistemos ar jų dalys. 
+Pavyzdžiui, jei yra tinklalapis, kurio dalis kurta su Python (backend), o dalis su JavaScript(frontend), 
+tai šios dvi jo dalys tarpusavyje dažnai bendrauja per Web API (nors ir ne visais atvejais). 
+
+Per Web API šios sistemų dalys vienos kitoms siunčia duomenys. Tai gali būti parieškos rezultatai, kokie nors duomenys, 
+kuriuose norim atvaizduoti vartotojui, ar vartotojo įvesti duomenys siunčiami į serverius (pavyzdžiui, komentarai).
+
+Yra keli sutartiniai standartai, kuriais šios Web API įgyvendinami. 
+
+### REST API
+
+Šiuo metu populiariausias standartas yra REST API. REST reiškia REpresentational State Transfer. Tai reiškia, kad 
+per ji naudojama duomenų būsenai (state) perduoti ar pakeisti. Paprasčiau tariant, ji naudojama atvaizduoti ar 
+keisti duomenis.
+
+#### REST API ir HTTP metodai
+
+Duomenys čia siunčiami naudojant REST HTTP metodus 
+(GET - paimti duomenis, ), POST - nusiųsti, DELETE - ištrinti, PUT ir POST - pakeisti. 
+
+#### REST API ir JSON
+
+Naudojant REST API, populiariausias duomenų siuntimo formatas yra JSON. JSON tai tam tikros taisykės, kaip reikia 
+struktūriškai sudėlioti duomenis siuntimui į kitą sistemą. JSON formatas labai panašus į Python 
+dictionaries ir lists formatą. 
+
+#### REST API struktūra (endpoints)
+
+REST API turi tam tikrą struktūrą. Konkreti struktūra visada priklauso nuo to, kaip API kūrėjai ją suplanuoja. 
+Bet yra tam tikri REST API kūrimo principai.
+
+REST API gali būti sudaryta iš daugelio duomenų siuntimo ir gavimo "punktų", angliškai vadinamų "endpoints". 
+Kiekvienas endpointas atvaizduoja tam tikrą duomenų klasę, jei įsivaizduotume objektinį programavimą, 
+su objektų savybėmis.
+
+Kadangi HTTP metodai nuodojami siųsti duomenis į ir iš API yra "veiksmažodžiai", tai patys "endpointai" būna 
+"daiktavardžiai".
+
+Pavyzdžiui, jei turim API, kuri skirta apmokėjimams, galim turėti endpointus "mokėjimas", "mokėtojas", su jų 
+savybėmis (duomenimis), panašiai, kaip jei mes turėtume klases "mokėjimas" ir "mokėtojas". 
+
+WEB API pasiekiami per HTTP aresus, panašiai kaip ir interneto puslapiai. 
+Jie turi pagrindinį adresą, pavyzdžiui https://www.mokejimai.com Tokiu atveju, mokėjimų ir mokėtojų endpointai 
+atrodytų taip: https://www.mokejimai.com/moketojai ir https://www.mokejimai.com/mokejimai
+
+Pasikreipę į šį endpoint, pavyzdžiui įvedę naršyklėje, arba naudodami specialias programas, kaip Postman ar Insomnia, 
+arba naudodami Python requests biblioteką, mes galim gauti ir siųsti duomenis iš ir į šias API. 
+
+
+### REST API naudojimas iš Python
+
+Naudojant Python galima gauti ir siųsti duomenis į įvairias REST API. 
+
+Kadangi REST API yra pasiekiama per žiniatinklio nuorodas, tai galima naudoti biblioteką `requests`, kuri skirta 
+užklausoms į internetinius puslapius ar į tuos pačius REST API. 
+
+
+Su šia biblioteka gauti ir siunčiami duomenys yra koduojami `JSON` formatu, taigi Python'e tam naudojama
+`json` biblioteka, kurios pagalba mes gautus ar siunčiamus duomenis galim pakeisti iš Python struktūrų 
+į JSON formatą siuntimui, ir atvirkščiai. 
+
+Informaciją apie `requests` ir `json` bibliotekas rasite žemiau pateiktose nuorodose.
+
+## Nuorodos
 
 - Requests  https://github.com/robotautas/kursas/wiki/Requests 
 

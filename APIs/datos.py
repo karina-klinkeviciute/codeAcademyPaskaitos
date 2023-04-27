@@ -13,6 +13,7 @@ for i in range(361):
     print(uzklausa)
 
     sleep(2)
+    # šito čia gal ir nereikia, nes API tikimasi daug užklausų, čia ne web scraping
 
     duomenys = requests.get(uzklausa)
 
