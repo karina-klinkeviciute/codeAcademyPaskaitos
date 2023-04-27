@@ -32,9 +32,9 @@
 #
 # # sudeti dvieju skaiciu kvadratus
 #
-def kvadratu_suma(x):
+def kvadratu_suma(sarasas):
     suma = 0
-    for skaicius in x:
+    for skaicius in sarasas:
         suma += skaicius**3
     return suma
 
