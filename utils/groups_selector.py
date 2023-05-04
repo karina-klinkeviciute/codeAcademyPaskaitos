@@ -5,9 +5,8 @@ people = ["A.B.J", "A.L.", "A.Š.", "A. Pe.", "A. Pu.", "A. M.", "D. G.", "D. R.
           "V. V.", "V. L."]
 
 groups = []
-
+random.shuffle(people)
 while people:
-    random.shuffle(people)
     groups.append(people[:5])
     people = people[5:]
 
