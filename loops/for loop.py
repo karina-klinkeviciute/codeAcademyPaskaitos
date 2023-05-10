@@ -56,24 +56,37 @@ from objektinis.sukaktis import Sukaktis
 #         # print(f"{kazkas} kart {kazkas_kitas} lygu {kazkas*kazkas_kitas}")
 #         print("@", end="")
 #     print("")
+#
+# eilute = "kazkoks sakinys"
+#
+# for index, raide in enumerate(eilute):
+#     # if
+#     print(index)
+#     print(raide)
+#
+# labas_vakaras("Lina")
+#
+# ar_kel = ar_keliamieji(datetime.now())
+#
+# print(ar_kel)
+#
+# siandien = Sukaktis("2023-04-14", "šiandien")
+#
+# ar_kel = siandien.ar_keliamieji()
+#
+# print(ar_kel)
 
-eilute = "kazkoks sakinys"
 
-for index, raide in enumerate(eilute):
-    # if
-    print(index)
-    print(raide)
+balandzio_temperaturos = [1, 5, -1, 8, 9, 12, 56, 54]
 
-labas_vakaras("Lina")
+geguzes_temperaturos = [1, 5, 8, 9, 12, 56, 54]
 
-ar_kel = ar_keliamieji(datetime.now())
+for temperatura in balandzio_temperaturos:
+    if temperatura < 0:
+        continue
+    print("šią dieną šalnų nebuvo")
 
-print(ar_kel)
 
-siandien = Sukaktis("2023-04-14", "šiandien")
 
-ar_kel = siandien.ar_keliamieji()
-
-print(ar_kel)
 
 
