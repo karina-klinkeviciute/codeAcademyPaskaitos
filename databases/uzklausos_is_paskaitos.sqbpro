@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/home/karina/work/codeacademy/pythonProject/databases/zmones.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="881"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:maindraugai"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="draugai" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="73"/><column index="2" value="108"/><column index="3" value="210"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE coder (
+    f_name VARCHAR(50),
+    l_name VARCHAR(50),
+    email VARCHAR(100),
+    age INT,
+    xp_years INT
+)</sql><sql name="SQL 2">CREATE TABLE coder2 (
+    id PRIMARY KEY NOT NULL,
+	f_name VARCHAR(50) NOT NULL,
+    l_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    age INT CHECK (age &gt; 17 AND age &lt; 120),
+    xp_years INT CHECK (xp_years &lt; 120)
+)</sql><sql name="SQL 3">insert into coder2 (id, f_name, l_name, age) values (1, &quot;Petras&quot;, &quot;Antanaitis&quot;, 20)</sql><sql name="SQL 4">ALTER TABLE coder2 ADD COLUMN project_id INTEGER;</sql><sql name="SQL 5">ALTER TABLE coder2 RENAME COLUMN project_id TO team_id;</sql><sql name="SQL 6">ALTER TABLE coder RENAME TO coderiai </sql><sql name="SQL 7">CREATE TABLE teams (
+  id integer PRIMARY KEY,
+  name string
+);</sql><sql name="SQL 8">CREATE TABLE coders3 (
+  id integer PRIMARY KEY,
+  f_name string NOT NULL,
+  l_name string NOT NULL,
+  email string UNIQUE,
+  age integer,
+  team_id integer,
+  FOREIGN KEY (team_id) REFERENCES teams (id)
+);
+</sql><sql name="SQL 9">INSERT into teams (id, name) values(3, &quot;trecia&quot;) </sql><sql name="SQL 10">-- insert into coders3 (id, f_name, l_name, team_id) VALUES (1, &quot;Petras&quot;, &quot;Antanaitis&quot;, 2);
+.insert into coders3 (id, f_name, l_name, team_id) VALUES (2, &quot;Antanas&quot;, &quot;Petraitis&quot;, 2);
+insert into coders3 (id, f_name, l_name, team_id) VALUES (3, &quot;Antanas&quot;, &quot;Antanaitis&quot;, 1);</sql><sql name="SQL 11">Alter TABLE tasks (
+	id integer PRIMARY KEY,
+	name string,
+	coder_id integer,
+	FOREIGN KEY (coder_id) REFERENCES coders3 (id)
+);</sql><sql name="SQL 12">
+
+INSERT INTO &quot;teams&quot; (&quot;name&quot;) VALUES ('Back End');
+INSERT INTO &quot;teams&quot; (&quot;name&quot;) VALUES ('DevOps');
+INSERT INTO &quot;teams&quot; (&quot;name&quot;) VALUES ('Front End');
+
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Jonas', 'Jonaitis', 'jj@gmail.com', '20', '1');
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Antanas', 'Antanaitis', 'aa@gmail.com', '25', '1');
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Juozas', 'Juozaitis', 'jj@hotmail.com', '30', '2');
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Petras', 'Petraitis', 'pp@mail.lt', '29', '2');
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Virgis', 'Virgutis', 'vv@gmail.com', '21', '3');
+INSERT INTO &quot;coders&quot; (&quot;f_name&quot;, &quot;l_name&quot;, &quot;email&quot;, &quot;age&quot;, &quot;team_id&quot;) VALUES ('Tomas', 'Aidietis', 'ta@imone.lt', '35', '3');
+
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Sutvarkyti DB', '5');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti dizainą', '1');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti formas', '2');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti tvarkykles', '6');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perkrauti serverius', '5');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti bibliotekas', '6');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Pakeisti logotipus', '2');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti dokumentaciją', '3');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Ištestuoti programą', '4');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti API', '4');</sql><sql name="SQL 13">delete from teams</sql><sql name="SQL 14">CREATE TABLE passwords (
+	id integer PRIMARY KEY,
+	coder_id integer UNIQUE,
+	pwd string,
+	FOREIGN KEY (coder_id) REFERENCES coders (id)
+	on delete CASCADE 
+);</sql><sql name="SQL 15">INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('1', '12345');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('2', 'verisykret');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('3', 'qwerty');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('4', 'uauauai');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('5', 'slaptazodis');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('6', 'barzda');
+
+</sql><sql name="SQL 17">drop table passwords;</sql><sql name="SQL 18">INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('1', '12345');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('2', 'verisykret');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('3', 'qwerty');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('4', 'uauauai');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('5', 'slaptazodis');
+INSERT INTO &quot;passwords&quot; (&quot;coder_id&quot;, &quot;pwd&quot;) VALUES ('6', 'barzda');</sql><sql name="SQL 19">CREATE TABLE tasks (
+	id integer PRIMARY KEY,
+	name string,
+	coder_id integer,
+	FOREIGN KEY (coder_id) REFERENCES coders (id)
+	on delete cascade
+);</sql><sql name="SQL 20">INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Sutvarkyti DB', '5');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti dizainą', '1');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti formas', '2');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti tvarkykles', '6');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perkrauti serverius', '5');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti bibliotekas', '6');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Pakeisti logotipus', '2');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Atnaujinti dokumentaciją', '3');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Ištestuoti programą', '4');
+INSERT INTO &quot;tasks&quot; (&quot;name&quot;, &quot;coder_id&quot;) VALUES ('Perdaryti API', '4');</sql><sql name="SQL 21">CREATE TABLE skills (
+  id integer PRIMARY KEY,
+  name integer
+);</sql><sql name="SQL 22">INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('Python');
+INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('JS');
+INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('CSS');
+INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('Go');
+INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('AWS');
+INSERT INTO &quot;skills&quot; (&quot;name&quot;) VALUES ('Linux');</sql><sql name="SQL 23">CREATE TABLE coders_skills (
+	coder_id integer,
+	skill_id integer,
+	FOREIGN KEY (coder_id) REFERENCES coders (id),
+	FOREIGN KEY (skill_id) REFERENCES skills (id)
+  );
+  
+  </sql><sql name="SQL 24">INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('2', '2');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('2', '3');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('3', '1');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('3', '4');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('4', '1');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('4', '6');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('5', '4');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('5', '5');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('6', '5');
+INSERT INTO &quot;coders_skills&quot; (&quot;coder_id&quot;, &quot;skill_id&quot;) VALUES ('6', '6');
+
+</sql><sql name="SQL 25">CREATE INDEX draugai_l_name
+ON draugai (l_name); </sql><current_tab id="23"/></tab_sql></sqlb_project>
