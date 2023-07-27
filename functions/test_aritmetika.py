@@ -27,6 +27,7 @@ class AritmetikaTest(unittest.TestCase):
         self.assertEqual(dalyba(5, 2), 2.5)
         self.assertEqual(dalyba(10, -2), -5)
 
+    def test_dalyba_klaidos(self):
         # vienas budas patikrinimui, ar metama klaida
         self.assertRaises(ZeroDivisionError, dalyba, 10, 0)
         # antras budas patikrinimui, ar metama klaida
